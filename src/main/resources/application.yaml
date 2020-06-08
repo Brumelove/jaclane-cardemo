@@ -1,0 +1,34 @@
+
+server:
+  port: 8056
+  servlet:
+    context-path: /cardemo
+
+
+logging:
+  level:
+    org:
+      springframework:
+        web : INFO
+      hibernate: INFO
+
+spring:
+  application:
+    name: cardemo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/cardemo
+    #url: jdbc:mysql://localhost:3306/cardemo
+    username: root
+    password: brume
+
+  jpa:
+    hibernate.ddl-auto: validate
+    properties:
+      hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hibernate.format_sql: false
+      hibernate.show_sql : false
+      hibernate.jdbc.lob.non_contextual_creation : true
+    hibernate.naming:
+      implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
